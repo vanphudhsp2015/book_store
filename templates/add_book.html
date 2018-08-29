@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Reset -->
+    <!-- <link rel="stylesheet" href="{% static 'css/reset.css' %}"> -->
+</head>
+
+<body>
+    <div class="small_div">
+        <div class="container">
+            <h2>Book List</h2>
+            <hr>
+            <form action="/create">
+                {% csrf_token %}
+                <label for="title" class="form-group">Title</label>
+                <input type="text" class="form-control" name="title" required><br>
+
+                <label for="price" class="form-group">Price</label>
+                <input type="text" class="form-control" name="price" required><br>
+
+                <label for="author" class="form-group">Author</label>
+                <input type="text" class="form-control" name="author" required><br>
+
+                <input type="submit" class="btn btn-success" value="Create">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

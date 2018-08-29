@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Index Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Reset -->
+    <!-- <link rel="stylesheet" href="{% static 'css/reset.css' %}"> -->
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                    <th>Choose</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.author}}</td>
+                    <td>
+                        <a class="btn btn-danger">Edit</a>
+                        <a class="btn btn-info">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
